@@ -60,7 +60,7 @@ QLever indexes the triples. The backend exposes `POST /api/sparql` and rejects S
 
 See [`sparql.md`](sparql.md) for classes, relations, and references.
 
-## API surface (conceptual)
+## API surface 
 
 | Area | Role |
 |---|---|
