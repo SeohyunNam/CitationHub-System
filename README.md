@@ -18,7 +18,6 @@ The home page is the entry point to the system.
 - The **hero search box** switches between Papers (title or DOI) and Authors.
 - **Dataset Overview** reports the scale currently served by the interactive system (seed papers, citation events, citing papers, authors, journals, countries, fields, and citation intents).
 - **Explore** links to the six analysis modules.
-- The footer attributes the system to **Seohyun Nam**.
 
 The numbers on the home page describe the live index. The full IDCite release is larger and is documented in [Data layer](#data-layer-idcite).
 
