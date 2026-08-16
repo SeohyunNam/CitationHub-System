@@ -153,7 +153,7 @@ The SPARQL engine is **QLever**. Example queries: [`examples/sparql/`](examples/
 
 ---
 
-## Contributor
+## Creator
 
 Seohyun Nam, Department of Computer Engineering, Chung-Ang University  
 Seohyun0315@cau.ac.kr
