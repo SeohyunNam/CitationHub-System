@@ -1,0 +1,12 @@
+PREFIX ch: <http://citationhub.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?author (SUM(?c) AS ?totalCitations) (COUNT(?p) AS ?papers) WHERE {
+  ?p a ch:SeedPaper ;
+     ch:hasAuthor ?a ;
+     ch:citedbyCount ?c .
+  ?a rdfs:label ?author .
+}
+GROUP BY ?author
+ORDER BY DESC(?totalCitations)
+LIMIT 10

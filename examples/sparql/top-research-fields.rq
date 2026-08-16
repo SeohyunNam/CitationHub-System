@@ -1,0 +1,11 @@
+PREFIX ch: <http://citationhub.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?field (COUNT(?p) AS ?papers) WHERE {
+  ?p a ch:SeedPaper ;
+     ch:belongsToField ?f .
+  ?f rdfs:label ?field .
+}
+GROUP BY ?field
+ORDER BY DESC(?papers)
+LIMIT 15

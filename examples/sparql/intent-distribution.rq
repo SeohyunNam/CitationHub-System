@@ -1,0 +1,8 @@
+PREFIX ch: <http://citationhub.org/ontology/>
+
+SELECT ?intent (COUNT(?ev) AS ?events) WHERE {
+  ?ev a ch:CitationEvent ;
+      ch:primaryIntent ?intent .
+}
+GROUP BY ?intent
+ORDER BY DESC(?events)

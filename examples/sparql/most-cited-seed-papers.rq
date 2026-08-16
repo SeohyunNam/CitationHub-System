@@ -1,0 +1,10 @@
+PREFIX ch: <http://citationhub.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?title ?citedby WHERE {
+  ?p a ch:SeedPaper ;
+     rdfs:label ?title ;
+     ch:citedbyCount ?citedby .
+}
+ORDER BY DESC(?citedby)
+LIMIT 10
