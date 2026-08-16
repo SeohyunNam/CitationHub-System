@@ -1,4 +1,4 @@
-# System architecture
+# System Architecture
 
 CitationHub is a three-part application over IDCite: a web interface, an API that reads Parquet tables, and a SPARQL service over an RDF conversion of the knowledge graph.
 
