@@ -2,7 +2,7 @@
 
 This page describes each user-facing view in the live system. The home screenshot in the [README](../README.md) shows the navigation bar that these sections follow.
 
-Live site: [https://citation-hub-website.vercel.app](https://citation-hub-website.vercel.app)
+Website URL: [https://citation-hub-website.vercel.app](https://citation-hub-website.vercel.app)
 
 ---
 
