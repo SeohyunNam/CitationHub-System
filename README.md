@@ -2,17 +2,15 @@
 
 ![CitationHub home](assets/citationhub-home.png)
 
-*CitationHub home: search, dataset overview, and exploration modules.*
-
 **CitationHub** is an interactive exploration system built on **IDCite**, a large-scale multidisciplinary citation-event dataset. It lets readers search influential seed papers and authors, inspect citation intents and contexts, and explore geographic, network, and knowledge-graph views of the same underlying resource.
 
-**Live system:** [https://citation-hub-website.vercel.app](https://citation-hub-website.vercel.app)
+**Website URL:** [https://citation-hub-website.vercel.app](https://citation-hub-website.vercel.app)
 
 This repository explains how CitationHub is organized and how it uses IDCite. It is written for readers who want to understand the system, not to rebuild or redeploy it.
 
 ---
 
-## What you are looking at
+## System Overview
 
 The home page is the entry point to the system.
 
@@ -103,7 +101,7 @@ File-by-file inventory and schemas: [`docs/data.md`](docs/data.md).
 
 ---
 
-## How the system is put together
+## System Architecture
 
 CitationHub separates the public interface from the data and query services.
 
@@ -147,7 +145,7 @@ The SPARQL engine is **QLever**. Example queries: [`examples/sparql/`](examples/
 
 ## Related resources
 
-- **Live CitationHub:** [https://citation-hub-website.vercel.app](https://citation-hub-website.vercel.app)
+- **CitationHub system:** [https://citation-hub-website.vercel.app](https://citation-hub-website.vercel.app)
 - **IDCite construction pipeline:** [https://github.com/SeohyunNam/MDCite](https://github.com/SeohyunNam/MDCite)
 - **IDCite dataset (Zenodo v3):** [https://doi.org/10.5281/zenodo.20796923](https://doi.org/10.5281/zenodo.20796923)
 - **IDCite mirror (Hugging Face):** [https://huggingface.co/datasets/Daniel0315/IDCite](https://huggingface.co/datasets/Daniel0315/IDCite)
