@@ -15,7 +15,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 Resources use `http://citationhub.org/id/<node_id>`.
 
-## Ontology (compact)
+## Ontology 
 
 **Classes:** `ch:SeedPaper`, `ch:CitingPaper`, `ch:CitationEvent`, `ch:Author`, `ch:Journal`, `ch:Affiliation`, `ch:City`, `ch:Country`, `ch:Field`, `ch:Intent`
 
