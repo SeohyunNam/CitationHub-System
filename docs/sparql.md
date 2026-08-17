@@ -25,7 +25,7 @@ Resources use `http://citationhub.org/id/<node_id>`.
 
 A citation event connects a citing paper to a seed paper and carries a primary intent. Seed papers connect to authors, affiliations, geography, journals, and fields.
 
-## Engine
+## SPARQL Engine
 
 Queries are evaluated by **QLever**, a SPARQL engine designed for large RDF graphs. The website talks to QLever through a backend proxy:
 
@@ -47,7 +47,7 @@ Prepared examples live in [`../examples/sparql/`](../examples/sparql/):
 | `top-countries.rq` | Countries with the most seed papers (via affiliations) |
 | `total-triples.rq` | Triple count |
 
-## References (QLever and SPARQL systems)
+## References 
 
 These papers are the recommended background for the SPARQL engine and related techniques used conceptually by CitationHub. They are not CitationHub publications.
 
