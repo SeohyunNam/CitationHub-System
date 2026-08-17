@@ -8,7 +8,7 @@ CitationHub does not collect bibliographic records at request time. It reads **I
 |---|---|
 | Official archived release (Zenodo, Version 3) | [https://doi.org/10.5281/zenodo.20796923](https://doi.org/10.5281/zenodo.20796923) |
 | Processed dataset and graph files (Hugging Face) | [https://huggingface.co/datasets/Daniel0315/IDCite](https://huggingface.co/datasets/Daniel0315/IDCite) |
-| Construction pipeline | [https://github.com/SeohyunNam/MDCite](https://github.com/SeohyunNam/MDCite) |
+| Dataset Construction pipeline | [https://github.com/SeohyunNam/MDCite](https://github.com/SeohyunNam/MDCite) |
 | Concept DOI (all versions) | [https://doi.org/10.5281/zenodo.18410049](https://doi.org/10.5281/zenodo.18410049) |
 
 Earlier Zenodo versions remain available for provenance: Version 1 (MDCite) and Version 2 (MDContextCite / EdgeCite). CitationHub is not a Zenodo dataset version; it is the interactive system on top of IDCite.
