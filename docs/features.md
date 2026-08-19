@@ -72,11 +72,11 @@ Geographic Map locates seed-paper authors and affiliations. A view switch offers
 
 | Layer | What it draws |
 |---|---|
-| **By country** | Choropleth of paper counts (darker = more papers) |
-| **By city** | One bubble per city, sized by paper count |
-| **By affiliation** | One bubble per institution, sized by paper count |
+| **By country** | Choropleth of paper counts (darker = more papers), with country names on the land |
+| **By city** | One bubble per city, sized by paper count, labelled with the city name |
+| **By affiliation** | One bubble per institution, sized by paper count, labelled with the institution name |
 
-- Bubble labels are placed automatically, avoiding one another; more names appear as the map is zoomed in.
+- Labels are placed automatically, avoiding one another; more names appear as the map is zoomed in.
 - Hovering a country, city, or institution reports its paper count.
 - Ranked bar charts under the map: **Top Countries**, **Top Cities**, **Top Affiliations**. Each bubble layer is coloured to match its bar chart.
 

@@ -50,7 +50,7 @@ Global statistics across citation events:
 
 ### Geographic Map
 
-A world map of seed-paper counts with three switchable layers — **by country** (choropleth), **by city**, and **by affiliation** (bubbles sized by paper count, labelled automatically). Ranked lists of top countries, cities, and affiliations sit under the map. IDCite names cities and affiliations but carries no coordinates; CitationHub places them with a GeoNames lookup shipped with the application.
+A world map of seed-paper counts with three switchable layers — **by country** (choropleth with country names), **by city**, and **by affiliation** (bubbles sized by paper count). All three layers are labelled automatically. Ranked lists of top countries, cities, and affiliations sit under the map. IDCite names cities and affiliations but carries no coordinates; CitationHub places them with a GeoNames lookup shipped with the application.
 
 ### Citation Network
 
