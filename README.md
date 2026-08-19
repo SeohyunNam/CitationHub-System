@@ -50,7 +50,7 @@ Global statistics across citation events:
 
 ### Geographic Map
 
-A choropleth world map of seed-paper counts by country, with ranked lists of top countries, cities, and affiliations. Darker countries have more papers; hover and zoom inspect individual values.
+A world map of seed-paper counts with three switchable layers — **by country** (choropleth), **by city**, and **by affiliation** (bubbles sized by paper count, labelled automatically). Ranked lists of top countries, cities, and affiliations sit under the map. IDCite names cities and affiliations but carries no coordinates; CitationHub places them with a GeoNames lookup shipped with the application.
 
 ### Citation Network
 
@@ -86,7 +86,7 @@ CitationHub is the application layer. **IDCite** is the data layer: 17 Apache Pa
 | Knowledge-graph nodes / edges | 3,418,433 / 6,855,117 |
 | Data snapshot | November 2025 |
 
-The interactive system reads a working subset of those tables (normalized seed papers, normalized citation events, author and affiliation-geography lookups, and the knowledge-graph node/edge files). The remaining tables are part of the public dataset release.
+The interactive system reads a working subset of those tables (normalized seed papers, normalized citation events, the author lookup, and the knowledge-graph node/edge files). Geographic Map uses city, country, and affiliation names already on the seed-paper table, plus a separate coordinate lookup derived from GeoNames — not from IDCite. The remaining tables are part of the public dataset release.
 
 **Where to get the 17 Parquet files**
 
@@ -119,7 +119,7 @@ FastAPI backend
        SPARQL engine (QLever) serving the RDF knowledge graph
 ```
 
-- The **frontend** is a Next.js application: paper/author search, charts, choropleth map, force graphs, and the SPARQL editor.
+- The **frontend** is a Next.js application: paper/author search, charts, a world map (country choropleth plus city and affiliation bubbles), force graphs, and the SPARQL editor.
 - The **backend** loads IDCite Parquet files and answers overview, search, paper, author, analytics, geo, and knowledge-graph requests.
 - The **RDF layer** is produced from `kg_nodes.parquet` and `kg_edges.parquet`. QLever indexes those triples; the backend forwards read-only SPARQL queries and rejects update operations.
 

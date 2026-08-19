@@ -10,7 +10,7 @@ This page describes **logical** structure. Hostnames, internal accounts, and ope
 Users
   └── Next.js frontend
         ├── search, author, and paper pages
-        ├── analytics charts and choropleth map
+        ├── analytics charts and geographic map
         ├── citation-network and knowledge-graph canvases
         └── SPARQL editor
               │
@@ -33,7 +33,7 @@ A Next.js (Pages Router) application with React. Typical libraries:
 
 - **SWR / fetch** for API calls
 - **Recharts** for analytics and author charts
-- **react-simple-maps** for the world choropleth
+- **react-simple-maps** for the world map: country choropleth plus city and affiliation bubble layers
 - **react-force-graph-2d** for Citation Network and Knowledge Graph
 
 The frontend does not embed the Parquet files. It only renders responses from the API.
@@ -70,7 +70,7 @@ See [`sparql.md`](sparql.md) for classes, relations, and references.
 | Paper | Intent summary, citing papers, co-cited papers, contexts |
 | Authors | Name search, profile, and per-author analytics |
 | Knowledge graph | Nodes and edges for one seed paper |
-| Geo | Country, city, and affiliation counts |
+| Geo | Country, city, and affiliation counts, plus map points for cities and affiliations |
 | Analytics | Intent trends, top venues, influential-citation ratio |
 | SPARQL | Read-only query proxy |
 | Export | CSV for search results or one paper’s citation events |
@@ -82,7 +82,7 @@ Exact paths and hosting details are omitted here on purpose.
 ```
 IDCite Parquet (Zenodo / Hugging Face / local copy)
         │
-        ├── seed + events + authors + geo  →  search, detail, analytics, map
+        ├── seed + events + authors        →  search, detail, analytics, map
         └── kg_nodes + kg_edges            →  N-Triples → QLever index
                                                     │
                                                     └── SPARQL explorer

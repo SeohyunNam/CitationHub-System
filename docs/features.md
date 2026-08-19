@@ -68,12 +68,23 @@ Canonical intents: `background`, `uses`, `similarities`, `motivation`, `differen
 
 ## Geographic Map (`/geo`)
 
-Geographic Map locates seed-paper authors and affiliations.
+Geographic Map locates seed-paper authors and affiliations. A view switch offers three layers over the same world map:
 
-- Interactive **choropleth** of paper counts by country (darker = more papers; hover and zoom).
-- Ranked bar charts: **Top Countries**, **Top Cities**, **Top Affiliations**.
+| Layer | What it draws |
+|---|---|
+| **By country** | Choropleth of paper counts (darker = more papers) |
+| **By city** | One bubble per city, sized by paper count |
+| **By affiliation** | One bubble per institution, sized by paper count |
 
-Coordinates come from the affiliation-geography table in IDCite.
+- Bubble labels are placed automatically, avoiding one another; more names appear as the map is zoomed in.
+- Hovering a country, city, or institution reports its paper count.
+- Ranked bar charts under the map: **Top Countries**, **Top Cities**, **Top Affiliations**. Each bubble layer is coloured to match its bar chart.
+
+### Where the coordinates come from
+
+IDCite names the city and country of every affiliation but carries no latitude or longitude, so the map cannot be drawn from the dataset alone. CitationHub resolves the dataset’s 1,935 distinct city–country pairs against the [GeoNames](https://www.geonames.org) gazetteer (CC BY 4.0) in advance and ships the resulting lookup table with the application; nothing is geocoded at request time. Matching is done per country and accounts for spelling differences between bibliographic metadata and the gazetteer — accents, alternate names, and same-name towns such as Princeton, NJ and Princeton, FL. The current lookup resolves 1,842 pairs, covering 99.3% of papers that record a city; the remainder are mostly hamlets and typos in the source metadata and are left off the map.
+
+Institutions have no coordinates of their own either, since IDCite locates an affiliation no more precisely than its city. Each is therefore drawn on its city’s position, and institutions sharing a city are fanned out around that point so that each keeps its own bubble, label, and hover target. That fan-out is a drawing device rather than a measured position, and it is held to a fixed size on screen so the ground distance it implies shrinks as the reader zooms in.
 
 ---
 
@@ -140,4 +151,4 @@ Inner tabs:
 
 ## How the views share data
 
-All of these pages read IDCite. Search and paper detail use normalized seed papers and citation events. Authors use the author lookup plus seed-paper metadata. Analytics aggregates citation events. Geographic Map uses affiliation geography. Citation Network uses citing-paper lists for one seed paper. Knowledge Graph and SPARQL use the node/edge tables and the RDF conversion of those tables.
+All of these pages read IDCite. Search and paper detail use normalized seed papers and citation events. Authors use the author lookup plus seed-paper metadata. Analytics aggregates citation events. Geographic Map counts the city, country, and affiliation names recorded on seed papers and places them with the bundled coordinate lookup. Citation Network uses citing-paper lists for one seed paper. Knowledge Graph and SPARQL use the node/edge tables and the RDF conversion of those tables.

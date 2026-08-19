@@ -28,7 +28,7 @@ Earlier Zenodo versions remain available for provenance: Version 1 (MDCite) and 
 | `kg_edges.parquet` | 6,855,117 | 3 | Typed knowledge-graph edges |
 | `authors.parquet` | 16,839 | 2 | Author ID–name mapping |
 | `affiliations.parquet` | 5,271 | 2 | Affiliation ID–name mapping |
-| `affiliation_geo.parquet` | 5,352 | 6 | Affiliation, city, and country mappings (including coordinates for the map) |
+| `affiliation_geo.parquet` | 5,352 | 6 | Affiliation, city, and country mappings — names and identifiers only, no coordinates |
 | `journals.parquet` | 46,237 | 2 | Journal ID–name mapping |
 | `fields.parquet` | 21 | 3 | Field ID–name mapping |
 | `intents.parquet` | 31 | 2 | Citation-intent ID–name mapping |
@@ -41,14 +41,26 @@ The live interface uses a working subset:
 
 | File | Used for |
 |---|---|
-| `seed_cited_papers_normalized.parquet` | Paper search, paper detail, author aggregation |
+| `seed_cited_papers_normalized.parquet` | Paper search, paper detail, author aggregation, Geographic Map |
 | `citation_events_normalized.parquet` | Citing lists, intents, analytics, citation network |
 | `authors.parquet` | Author names and author search |
-| `affiliation_geo.parquet` | Geographic Map |
 | `kg_nodes.parquet` | Knowledge Graph explorer |
 | `kg_edges.parquet` | RDF conversion for SPARQL |
 
-The other files belong to the public IDCite release (lookups, unnormalized tables, enriched events) and support dataset reuse outside the website.
+The other files belong to the public IDCite release (lookups, unnormalized tables, enriched events) and support dataset reuse outside the website. Geographic Map reads the city, country, and affiliation names already carried on normalized seed papers; it does not need the separate affiliation-geography table.
+
+## Place coordinates
+
+No table in IDCite records latitude or longitude — `affiliation_geo.parquet` maps affiliations to city and country **names** only. Coordinates are therefore not dataset content but a derived lookup that CitationHub maintains alongside the application:
+
+| Property | Value |
+|---|---|
+| Source | [GeoNames](https://www.geonames.org) `cities500` gazetteer and ISO country table, licensed CC BY 4.0 |
+| Granularity | One coordinate per (city, country) pair — 1,842 pairs resolved out of 1,935 present |
+| Coverage | 99.3% of papers that record a city |
+| When it runs | Ahead of time, regenerated when the seed table changes; never at request time |
+
+Keeping the lookup outside IDCite means the dataset stays the record of what was published, geocoding can be improved without reissuing dataset versions, and one coordinate is stored per city instead of repeating it across 23,479 seed-paper rows. Affiliations reuse their city’s coordinate, as IDCite gives no finer location.
 
 Home-page cards may show slightly different counts from the full release (for example, journals listed in filters versus the full journal lookup, or the seven canonical intents versus 31 observed labels). Treat the Parquet inventory as the dataset of record.
 
