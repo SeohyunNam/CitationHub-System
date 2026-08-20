@@ -6,7 +6,7 @@
 
 **Website URL:** [https://citation-hub-website.vercel.app](https://citation-hub-website.vercel.app)
 
-This repository explains how CitationHub is organized and how it uses IDCite. It is written for readers who want to understand the system, not to rebuild or redeploy it.
+This repository explains how CitationHub is organized and how it uses IDCite. It is written for readers who want to **understand** the system, **not** to **rebuild** or **redeploy** it.
 
 ---
 
