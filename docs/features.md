@@ -11,6 +11,7 @@ Website URL: [https://citation-hub-website.vercel.app](https://citation-hub-webs
 Home is the orientation page.
 
 - **Papers / Authors toggle** in the search box. Papers search by title or DOI; Authors search by name.
+- Under the paper search box, **Advanced search** opens `/search/advanced`.
 - **Dataset Overview** cards report the live index: seed papers, citation events, citing papers, authors, journals, countries, research fields, and citation intents.
 - **Explore** cards link to Browse Papers, Author Search, Citation Analytics, Geographic Map, Knowledge Graph, and SPARQL Explorer.
 
@@ -26,6 +27,21 @@ Search is the catalogue of highly cited **seed papers**.
 - Sidebar filters: **Field**, **Country**, **Journal**.
 - Pagination and **Export CSV**.
 - Each result card opens **paper detail**.
+- Query parameters from Advanced search (`title`, `author`, `journal`, `year_min`, `year_max`) are applied together with the sidebar filters.
+
+---
+
+## Advanced search (`/search/advanced`)
+
+![CitationHub advanced search](../assets/citationhub-advanced-search.png)
+
+Advanced search is a fielded form over the same seed-paper table as Search. It does not query a second index.
+
+- **Keywords** → title or DOI tokens (`q`).
+- **Title**, **Author(s)**, **In journal(s)** → those columns on the normalized seed-paper table (`creator` is stored as Scopus-style names such as `Studenski S.`).
+- Every filled field must match (AND across fields). Every word inside a field must appear (AND within a field; substring, not Boolean OR/NOT).
+- **Date published** filters the paper’s cover year. Radio presets cover Any date, Since 2020, 2015–2019, 2010–2014, Before 2010, plus custom start/end years. This is not the citing-paper year used on Analytics or paper-detail citation events.
+- Submit navigates to `/search` with those query parameters. **Edit advanced search** returns to the form with the same values.
 
 ---
 

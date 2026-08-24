@@ -15,7 +15,7 @@ This repository explains how CitationHub is organized and how it uses IDCite. It
 The home page is the entry point to the system.
 
 - The **top navigation** lists eight modules: Home, Search, Authors, Analytics, Geographic Map, Citation Network, Knowledge Graph, and SPARQL.
-- The **hero search box** switches between Papers (title or DOI) and Authors.
+- The **hero search box** switches between Papers (title or DOI) and Authors. Under the paper search box, **Advanced search** opens a fielded form (title, author, journal, publication year).
 - **Dataset Overview** reports the scale currently served by the interactive system (seed papers, citation events, citing papers, authors, journals, countries, fields, and citation intents).
 - **Explore** links to the six analysis modules.
 
@@ -29,11 +29,24 @@ Each navigation tab is a separate view over the same IDCite tables.
 
 ### Home
 
-The landing page introduces the corpus, provides paper/author search, and summarizes dataset scale. The Explore cards jump to Search, Authors, Analytics, Geographic Map, Knowledge Graph, and SPARQL.
+The landing page introduces the corpus, provides paper/author search, and summarizes dataset scale. The Explore cards jump to Search, Authors, Analytics, Geographic Map, Knowledge Graph, and SPARQL. The paper search box includes an **Advanced search** link to `/search/advanced`.
 
 ### Search
 
-Keyword search over seed-paper titles and DOIs, with Field, Country, and Journal filters, pagination, and CSV export. Opening a result leads to the **paper detail** page.
+Keyword search over seed-paper titles and DOIs, with Field, Country, and Journal filters, pagination, and CSV export. Opening a result leads to the **paper detail** page. The same page also accepts the fielded query produced by Advanced search (`title`, `author`, `journal`, `year_min`, `year_max`).
+
+### Advanced search
+
+![CitationHub advanced search](assets/citationhub-advanced-search.png)
+
+`/search/advanced` is a fielded form over the seed-paper catalogue, reached from Home (and from the paper search bar). It is not a separate data source: the same `/search` results page and `/api/search` filters serve both the simple box and this form.
+
+- **Keywords** match tokens in the title or DOI.
+- **Title**, **Author(s)**, and **In journal(s)** each search that bibliographic field.
+- Filled fields are combined with AND. Within a field, every whitespace-separated word must appear (substring match). Example: `deep learning` keeps papers whose title or DOI contains both words.
+- Author strings in IDCite follow Scopus style (`Studenski S.`), not a full given name.
+- **Date published** is the seed paper’s cover year, not the year it was cited. Presets: Any date, Since 2020, 2015–2019, 2010–2014, Before 2010, or a custom YYYY–YYYY range.
+- Submit sends the query to `/search`; the result list can reopen the form via **Edit advanced search**.
 
 ### Authors
 
