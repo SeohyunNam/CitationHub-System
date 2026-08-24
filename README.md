@@ -46,7 +46,6 @@ Keyword search over seed-paper titles and DOIs, with Field, Country, and Journal
 - Filled fields are combined with AND. Within a field, every whitespace-separated word must appear (substring match). Example: `deep learning` keeps papers whose title or DOI contains both words.
 - Author strings in IDCite follow Scopus style (`Studenski S.`), not a full given name.
 - **Date published** is the seed paper’s cover year, not the year it was cited. Presets: Any date, Since 2020, 2015–2019, 2010–2014, Before 2010, or a custom YYYY–YYYY range.
-- Submit sends the query to `/search`; the result list can reopen the form via **Edit advanced search**.
 
 ### Authors
 
