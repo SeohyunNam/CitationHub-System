@@ -8,6 +8,8 @@
 
 This repository explains how CitationHub is organized and how it uses IDCite. It is written for readers who want to **understand** the system, **not** to **rebuild** or **redeploy** it.
 
+**🎥 Watch the CitationHub System in action:** [Watch the interactive demo](https://app.arcade.software/share/videos/19ledKuzOhMuJOPhVr4K)
+
 ---
 
 ## System Overview
