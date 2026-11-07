@@ -49,6 +49,27 @@ Keyword search over seed-paper titles and DOIs, with Field, Country, and Journal
 - Author strings in IDCite follow Scopus style (`Studenski S.`), not a full given name.
 - **Date published** is the seed paper’s cover year, not the year it was cited. Presets: Any date, Since 2020, 2015–2019, 2010–2014, Before 2010, or a custom YYYY–YYYY range.
 
+### Citation search
+
+![CitationHub citation search](assets/citationhub-citation-search.png)
+
+`/search/citation` sits in a tab next to Advanced search and is also linked under the paper search box on Home. Instead of matching words in titles, it recommends **which seed paper to cite at a specific point in a manuscript**.
+
+- **Field** (optional) limits the candidates to one of the 21 scientific fields.
+- **Paper title** is the title of the manuscript being written; a working title is fine.
+- **Citation context** is the sentence from the manuscript where a reference is needed, for example `… on the GOT-10k benchmark [?].`
+- **Citation intent** is the role the reference plays in that sentence: Background, Uses, Similarities, Motivation, Differences, Future Work, or Extends. Several can be selected; Search Tips explains each one.
+- By default only papers that IDCite records as cited with a selected intent are ranked.
+
+The 15 best-matching seed papers are listed. Each shows its citation counts per intent and, on request, the citation contexts in which other papers cited it with that intent — evidence of *how* the paper has been used for that purpose. **Open in Citation Network** shows the same paper filtered to those intents. The form opens with a real IDCite citation filled in; when it is run unchanged, the paper that sentence actually cites is marked with a red circle.
+
+**Ranking framework.** Results are ordered by a citation-context-aware ranking, not by citation counts or PageRank:
+
+1. A frozen SciBERT encoder turns text into vectors. Each seed paper is represented once by its bibliographic metadata (title, journal, creator, field, category).
+2. The citation context is encoded together with a short description of the selected intent (for example, *Uses: the current research uses a method, dataset, tool, resource, or approach from the cited work*), so the same sentence is read differently for different citation roles.
+3. The query combines the paper title with this intent-conditioned context (context weight 0.75).
+4. Seed papers are ranked by cosine similarity to the query; with several intents, a paper keeps its best score.
+
 ### Authors
 
 Author-name search grouped by author identifier. Each card shows affiliation, country, primary field, seed-paper count, and total citations. Opening a card leads to the **author detail** page: profile metadata, seed papers, citation-intent distribution, citations over time, and top citing venues.

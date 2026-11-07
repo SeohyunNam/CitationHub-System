@@ -45,6 +45,25 @@ Advanced search is a fielded form over the same seed-paper table as Search. It d
 
 ---
 
+## Citation search (`/search/citation`)
+
+![CitationHub citation search](../assets/citationhub-citation-search.png)
+
+Citation search recommends seed papers for a specific citation in a manuscript. It is reached from the tab next to Advanced search and from the **Citation search** link under the paper search box on Home.
+
+- **Field** (optional) restricts candidates to one scientific field; “All fields” searches every seed paper.
+- **Paper title** — the manuscript’s (working) title.
+- **Citation context** — the sentence that needs a reference, pasted from the manuscript.
+- **Citation intent** — one or more of the seven canonical intents; each is described in Search Tips and on hover.
+- **Only rank papers that have been cited with the selected intent(s)** (on by default) keeps candidates that IDCite records as cited with a selected intent.
+- **Clear** empties the form. The query is kept in the URL, so a result page can be shared.
+
+Results list 15 seed papers. Each card shows bibliographic metadata, citation counts per intent, **Show citation contexts** (up to four citing papers that cited it with the selected intent, with their sentences), and **Open in Citation Network**. The form opens with a real IDCite citation; when that example is run unchanged, the paper it actually cites is marked with a red circle (explained under *Result marks*).
+
+Ranking is citation-context-aware: a frozen SciBERT encoder, a query that fuses the title with the intent-conditioned citation context, and cosine similarity against each seed paper’s bibliographic representation. See the [README](../README.md#citation-search) for a short description of the framework.
+
+---
+
 ## Authors (`/authors`)
 
 Authors is a name search over seed-paper creators, grouped by `author_id`.
