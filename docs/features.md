@@ -60,7 +60,7 @@ Citation search recommends seed papers for a specific citation in a manuscript. 
 
 Results list 15 seed papers. Each card shows bibliographic metadata, citation counts per intent, **Show citation contexts** (up to four citing papers that cited it with the selected intent, with their sentences), and **Open in Citation Network**. The form opens with a real IDCite citation; when that example is run unchanged, the paper it actually cites is marked with a red circle (explained under *Result marks*).
 
-Ranking is citation-context-aware: a frozen SciBERT encoder, a query that fuses the title with the intent-conditioned citation context, and cosine similarity against each seed paper’s bibliographic representation. See the [README](../README.md#citation-search) for a short description of the framework.
+Ranking is citation-context-aware: a frozen SciBERT encoder, a query that fuses the title with the citation context, and cosine similarity against each seed paper’s bibliographic representation. The citation intent restricts the candidates and selects the evidence shown, rather than entering the query. See the [README](../README.md#citation-search) for a short description of the framework.
 
 ---
 

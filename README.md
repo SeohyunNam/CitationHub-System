@@ -66,9 +66,9 @@ The 15 best-matching seed papers are listed. Each shows its citation counts per 
 **Ranking framework.** Results are ordered by a citation-context-aware ranking, not by citation counts or PageRank:
 
 1. A frozen SciBERT encoder turns text into vectors. Each seed paper is represented once by its bibliographic metadata (title, journal, creator, field, category).
-2. The citation context is encoded together with a short description of the selected intent (for example, *Uses: the current research uses a method, dataset, tool, resource, or approach from the cited work*), so the same sentence is read differently for different citation roles.
-3. The query combines the paper title with this intent-conditioned context (context weight 0.75).
-4. Seed papers are ranked by cosine similarity to the query; with several intents, a paper keeps its best score.
+2. The paper title and the citation context are encoded separately and combined into one query vector (context weight 0.75), so the ranking reflects both the topic of the manuscript and what is being said at the point of citation.
+3. Seed papers are ranked by cosine similarity to the query.
+4. The citation intent selects the candidates and the evidence rather than changing the query: only papers that IDCite records as cited with the selected intent are ranked, and the citation contexts shown for each result are those with that intent.
 
 ### Authors
 
