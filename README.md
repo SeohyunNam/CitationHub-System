@@ -63,7 +63,7 @@ Keyword search over seed-paper titles and DOIs, with Field, Country, and Journal
 
 The 15 best-matching seed papers are listed. Each shows its citation counts per intent and, on request, the citation contexts in which other papers cited it with that intent — evidence of *how* the paper has been used for that purpose. **Open in Citation Network** shows the same paper filtered to those intents. The form opens with a real IDCite citation filled in; when it is run unchanged, the paper that sentence actually cites is marked with a red circle.
 
-**Ranking framework.** Results are ordered by a citation-context-aware ranking, not by citation counts or PageRank:
+**Ranking framework.** Results are ordered by a **citation-context-aware ranking**, **not** by *citation counts* or *PageRank*:
 
 1. A frozen SciBERT encoder turns text into vectors. Each seed paper is represented once by its bibliographic metadata (title, journal, creator, field, category).
 2. The paper title and the citation context are encoded separately and combined into one query vector (context weight 0.75), so the ranking reflects both the topic of the manuscript and what is being said at the point of citation.
