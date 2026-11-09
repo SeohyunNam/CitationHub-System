@@ -58,7 +58,7 @@ Citation search recommends seed papers for a specific citation in a manuscript. 
 - **Only rank papers that have been cited with the selected intent(s)** (on by default) keeps candidates that IDCite records as cited with a selected intent.
 - **Clear** empties the form. The query is kept in the URL, so a result page can be shared.
 
-Results list 15 seed papers. Each card shows bibliographic metadata, citation counts per intent, **Show citation contexts** (up to four citing papers that cited it with the selected intent, with their sentences), and **Open in Citation Network**. The form opens with a real IDCite citation; when that example is run unchanged, the paper it actually cites is marked with a red circle (explained under *Result marks*).
+Results list 15 seed papers. Each card shows bibliographic metadata, citation counts per intent, **Show citation contexts** (up to four citing papers that cited it with the selected intent, with their sentences), and **Open in Citation Network**. The form opens with a sample query taken from a real IDCite citing paper so it can be tried with one click; results are numbered in rank order only, and no result is marked as an expected answer.
 
 Ranking is citation-context-aware: a frozen SciBERT encoder, a query that fuses the title with the citation context, and cosine similarity against each seed paper’s bibliographic representation. The citation intent restricts the candidates and selects the evidence shown, rather than entering the query. See the [README](../README.md#citation-search) for a short description of the framework.
 

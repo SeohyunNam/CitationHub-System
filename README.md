@@ -61,7 +61,7 @@ Keyword search over seed-paper titles and DOIs, with Field, Country, and Journal
 - **Citation intent** is the role the reference plays in that sentence: Background, Uses, Similarities, Motivation, Differences, Future Work, or Extends. Several can be selected; Search Tips explains each one.
 - By default only papers that IDCite records as cited with a selected intent are ranked.
 
-The 15 best-matching seed papers are listed. Each shows its citation counts per intent and, on request, the citation contexts in which other papers cited it with that intent — evidence of *how* the paper has been used for that purpose. **Open in Citation Network** shows the same paper filtered to those intents. The form opens with a real IDCite citation filled in; when it is run unchanged, the paper that sentence actually cites is marked with a red circle.
+The 15 best-matching seed papers are listed. Each shows its citation counts per intent and, on request, the citation contexts in which other papers cited it with that intent — evidence of *how* the paper has been used for that purpose. **Open in Citation Network** shows the same paper filtered to those intents. The form opens with a sample query (the title and one citing sentence of a real IDCite citing paper) so it can be tried with one click; results are numbered in rank order only.
 
 **Ranking framework.** Results are ordered by a **citation-context-aware ranking**, **not** by *citation counts* or *PageRank*:
 
