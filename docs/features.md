@@ -131,6 +131,9 @@ Citation Network shows **who cites a chosen seed paper, and with what intent**.
 - Force-directed graph: the seed paper is the center node; citing papers are colored by primary intent.
 - Node size reflects available citation-context evidence.
 - Click a node for title, year, and intent; open **View Detail** for the full paper page.
+- Click intents in the legend to filter. A filter counts every IDCite citation event carrying that intent, including events with two labels, so the numbers match the intent counts on Citation search.
+- Up to 500 citing papers are drawn (most citation contexts first); the legend says when more exist.
+- **Download citation events (CSV)** exports every citation event shown, with its IDCite `citation_event_id` and citation contexts.
 
 This view is a citation neighborhood, not the full heterogeneous knowledge graph.
 
