@@ -53,10 +53,10 @@ Citation search runs on real IDCite citation events. It is reached from the tab 
 
 - **Keywords** (citing title or citation context), **Citation intent**, and **Field** filter the 1,975 citation events of the evaluation set; the list is paginated, ten events per page.
 - **Rank candidates** uses the selected event's citing title, citation context, and intent as the query and ranks its fixed set of 100 same-field candidate papers.
-- The result shows the event (citing paper, context, intent, `citation_event_id`), the paper it cites with its rank under C1, C2, and C3, and the top 10 candidates for the condition chosen with the C1 / C2 / C3 tabs.
+- The result shows the event (citing paper title, citing citation context, intent; **Show evidence** reveals its IDCite `citation_event_id`, the CSV link, and the generation guide), the paper it cites with its rank under C1, C2, and C3, and the top 10 candidates for the condition chosen with the C1 / C2 / C3 tabs.
 - Each candidate card shows bibliographic metadata, score and ranks, citation counts per intent, **Show citation contexts** (other IDCite citations of that paper with the same intent; the query's own citing paper is excluded), and **Open in Citation Network**.
 - **Download CSV** returns all 100 candidates with `is_cited_target`, scores, and ranks.
-- Search Tips explain the three conditions, show the SHA-256 of the candidate matrix, and link to [`evaluation-dataset.md`](evaluation-dataset.md), which describes how to regenerate the set.
+- Search Tips explain the three conditions and link to [`evaluation-dataset.md`](evaluation-dataset.md), which describes how to regenerate the set.
 - The query and selection are kept in the URL, so a result page can be shared.
 
 ---

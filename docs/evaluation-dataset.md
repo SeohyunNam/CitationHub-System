@@ -96,8 +96,8 @@ certutil -hashfile test_candidate_matrix.npy SHA256                  # Windows
 | `test_candidate_matrix.npy` | `e3d909d4b66033c3ace7a2335ee5112eb7f6e51aed6f65bdc5182a180012a810` |
 | `valid_candidate_matrix.npy` | `581180813cb42f1a924deffc068158178597a8391f656f4cffd9f0a2f735d349` |
 
-The test-matrix hash is also shown on the Citation search page (Search Tips → *Data and verification*),
-so the set served by the website can be compared with a local regeneration.
+The CitationHub server reports the hash of the matrix it serves at `/api/citation-search/test/meta`
+(`matrix_sha256`), so the set behind the website can be compared with a local regeneration.
 
 ---
 
