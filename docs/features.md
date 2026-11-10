@@ -52,14 +52,16 @@ Advanced search is a fielded form over the same seed-paper table as Search. It d
 Citation search runs on real IDCite citation events. It is reached from the tab next to Advanced search and from the **Citation search** link under the paper search box on Home.
 
 - **Keywords** (citing title or citation context), **Citation intent**, and **Field** filter the 1,975 citation events of the evaluation set; the list is paginated, ten events per page.
+- The list keeps the evaluation-set order, not relevance; a note under its heading says so. Filters only narrow the list.
 - Opened without a query, the page runs an example search (*Stem cells*, Similarities, Multidisciplinary) and ranks one of its events; a new search or another event replaces it.
 - Keywords match the start of a word (*stem* finds "stem" and "stems", not "system") and are highlighted in yellow; each context excerpt starts near its first match.
 - When the example event is shown, a short note above it explains that it is the example.
-- **Rank candidates** uses the selected event's citing title, citation context, and intent as the query and ranks its fixed set of 100 same-field candidate papers.
+- **Back to example** (next to **Clear**) returns to the example search from any search; **Clear** only empties the form. Every new search clears the selected event, so an earlier ranking is not left on screen.
+- **Rank candidates** uses the selected event's citing title, citation context, and intent as the query and ranks its fixed set of 100 same-field candidate papers. The selected event is highlighted in the list with a **Ranked below** label, and its button becomes **View its ranking**, which scrolls to the result.
 - The result shows the event (citing paper title, citing citation context, intent), the paper it cites with its rank under C1, C2, and C3 (**Show evidence** there reveals the IDCite `citation_event_id` recording the citation, the CSV link, and the generation guide), and the top 10 candidates for the condition chosen with the C1 / C2 / C3 tabs.
 - Each candidate card shows bibliographic metadata, score and ranks, citation counts per intent, **Show citation contexts** (other IDCite citations of that paper with the same intent; the query's own citing paper is excluded), and **Open in Citation Network**.
 - **Download CSV** returns all 100 candidates with `is_cited_target`, scores, and ranks.
-- Search Tips explain the three conditions and link to [`evaluation-dataset.md`](evaluation-dataset.md), which describes how to regenerate the set.
+- Search Tips list the seven citation intents, describe the data and how it can be verified (with a link to [`evaluation-dataset.md`](evaluation-dataset.md), which explains how to regenerate the set), and explain the three ranking conditions.
 - The query and selection are kept in the URL, so a result page can be shared.
 
 ---
