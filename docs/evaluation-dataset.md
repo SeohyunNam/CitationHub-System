@@ -27,8 +27,7 @@ verified gold labels.
 
 ## Inputs
 
-Two files from the IDCite release ([Zenodo](https://doi.org/10.5281/zenodo.20796923),
-[Hugging Face](https://huggingface.co/datasets/Daniel0315/IDCite)):
+Find Two files from the IDCite release ([Zenodo](https://doi.org/10.5281/zenodo.20796923)
 
 | File | SHA-256 of the copy used by CitationHub |
 |---|---|
