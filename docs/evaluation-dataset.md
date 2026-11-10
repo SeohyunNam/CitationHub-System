@@ -27,7 +27,7 @@ verified gold labels.
 
 ## Inputs
 
-Find Two files from the IDCite release ([Zenodo](https://doi.org/10.5281/zenodo.20796923)
+Find Two files from the IDCite release ([Zenodo](https://doi.org/10.5281/zenodo.20796923))
 
 | File | SHA-256 of the copy used by CitationHub |
 |---|---|
