@@ -56,7 +56,7 @@ Citation search runs on real IDCite citation events. It is reached from the tab 
 - Keywords match the start of a word (*stem* finds "stem" and "stems", not "system") and are highlighted in yellow; each context excerpt starts near its first match.
 - When the example event is shown, a short note above it explains that it is the example.
 - **Rank candidates** uses the selected event's citing title, citation context, and intent as the query and ranks its fixed set of 100 same-field candidate papers.
-- The result shows the event (citing paper title, citing citation context, intent; **Show evidence** reveals its IDCite `citation_event_id`, the CSV link, and the generation guide), the paper it cites with its rank under C1, C2, and C3, and the top 10 candidates for the condition chosen with the C1 / C2 / C3 tabs.
+- The result shows the event (citing paper title, citing citation context, intent), the paper it cites with its rank under C1, C2, and C3 (**Show evidence** there reveals the IDCite `citation_event_id` recording the citation, the CSV link, and the generation guide), and the top 10 candidates for the condition chosen with the C1 / C2 / C3 tabs.
 - Each candidate card shows bibliographic metadata, score and ranks, citation counts per intent, **Show citation contexts** (other IDCite citations of that paper with the same intent; the query's own citing paper is excluded), and **Open in Citation Network**.
 - **Download CSV** returns all 100 candidates with `is_cited_target`, scores, and ranks.
 - Search Tips explain the three conditions and link to [`evaluation-dataset.md`](evaluation-dataset.md), which describes how to regenerate the set.
