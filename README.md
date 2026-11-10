@@ -96,7 +96,7 @@ A read-only SPARQL explorer over the RDF knowledge graph (about 25 million tripl
 
 ### Paper detail
 
-Not a navigation tab, but reachable from Search, Citation Network, and Knowledge Graph. It shows bibliographic metadata, intent distribution, citing papers, co-cited papers, citation-context snippets, a knowledge-graph shortcut, and CSV export of that paper’s citation events.
+Not a navigation tab, but reachable from Search, Citation Network, and Knowledge Graph. It shows bibliographic metadata, intent distribution, citing papers, co-cited papers, a shortcut to the paper's knowledge graph, and CSV export of that paper’s citation events.
 
 More screen-level detail is in [`docs/features.md`](docs/features.md).
 

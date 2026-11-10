@@ -176,7 +176,7 @@ Example query files: [`../examples/sparql/`](../examples/sparql/). Technical not
 
 Paper detail is opened from Search, Citation Network, or Knowledge Graph.
 
-Header: title, field, country, DOI, cited-by count, citation-event count, publication date, journal, author, affiliation, and city. Shortcuts: **View Knowledge Graph** and **Export Citations CSV**.
+Header: title, field, country, DOI, cited-by count, citation-event count, publication date, journal, author, affiliation, and city. Shortcuts: **View Knowledge Graph** (opens the Knowledge Graph on this paper) and **Export Citations CSV**.
 
 Inner tabs:
 
@@ -185,7 +185,6 @@ Inner tabs:
 | Overview | Intent distribution and summary statistics |
 | Citing Papers | Papers that cite this seed paper |
 | Co-cited | Other seed papers co-cited with this one |
-| Citation Contexts | In-text citation snippets |
 
 ---
 
