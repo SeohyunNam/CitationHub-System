@@ -53,7 +53,7 @@ Keyword search over seed-paper titles and DOIs, with Field, Country, and Journal
 
 ![CitationHub citation search](assets/citationhub-citation-search.png)
 
-`/search/citation` sits in a tab next to Advanced search and is also linked under the paper search box on Home. It runs on **real IDCite citation events**: each one records a citing paper, the sentence in which it cites a seed paper (citation context), the citation intent, and the seed paper it cites.
+`/search/citation` sits in a tab next to Advanced search and is also linked under the paper search box on Home. It runs on **real IDCite citation events**: each one links a citing paper to a seed paper it cites and records every sentence in which it does so (citation context) and the citation intent.
 
 - **Keywords** search the citing-paper titles and citation contexts of the 1,975 citation events in the evaluation set; **Citation intent** and **Field** narrow the list.
 - Selecting an event uses its citing title, citation context, and intent as the query and ranks the event's fixed set of **100 same-field candidate papers** (the cited paper plus 99 others).

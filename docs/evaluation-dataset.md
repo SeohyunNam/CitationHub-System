@@ -12,7 +12,7 @@ Website: [https://citation-hub-website.vercel.app/search/citation](https://citat
 
 | Part | Size | Meaning |
 |---|---|---|
-| Test citation events | 1,975 | Real IDCite citation events: a citing paper, the sentence in which it cites a seed paper (citation context), the citation intent, and the seed paper it cites |
+| Test citation events | 1,975 | Real IDCite citation events: a citing paper, the seed paper it cites, every sentence in which it does so (citation context, joined into one text), and the citation intent |
 | Validation citation events | 1,954 | Built the same way from a disjoint set of citing papers |
 | Candidate sets | 100 per event | The cited seed paper plus 99 other seed papers from the same scientific field |
 
@@ -40,9 +40,12 @@ Find Two files from the IDCite release ([Zenodo](https://doi.org/10.5281/zenodo.
 
 All steps use `RANDOM_SEED = 42`. The code is [`scripts/extract_candidates.py`](../scripts/extract_candidates.py).
 
-1. **Filter citation events.** Keep events whose primary intent is one of the seven canonical intents
+1. **Filter citation events.** Keep events labelled with exactly one of the seven canonical intents
    (`background`, `uses`, `similarities`, `differences`, `motivation`, `extends`, `future_work`), with a
-   non-empty citing-paper title and citation context, and whose cited paper is a seed paper.
+   non-empty citing-paper title and citation context, and whose cited paper is a seed paper. Events with
+   two intent labels (e.g. `background similarities`, about 1.4% of IDCite) are not used, although the
+   website's counts and Citation Network include them. When an event has several context sentences,
+   they are joined into one context text.
    Result: 1,687,364 events from 1,335,652 citing papers to 12,590 seed papers.
 2. **Split by citing paper.** Shuffle the unique citing papers and assign them 80 / 10 / 10 to
    train / validation / test, so no citing paper appears in two splits (test: 133,566 citing papers,
