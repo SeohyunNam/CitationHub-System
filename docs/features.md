@@ -49,18 +49,15 @@ Advanced search is a fielded form over the same seed-paper table as Search. It d
 
 ![CitationHub citation search](../assets/citationhub-citation-search.png)
 
-Citation search recommends seed papers for a specific citation in a manuscript. It is reached from the tab next to Advanced search and from the **Citation search** link under the paper search box on Home.
+Citation search runs on real IDCite citation events. It is reached from the tab next to Advanced search and from the **Citation search** link under the paper search box on Home.
 
-- **Field** (optional) restricts candidates to one scientific field; “All fields” searches every seed paper.
-- **Paper title** — the manuscript’s (working) title.
-- **Citation context** — the sentence that needs a reference, pasted from the manuscript.
-- **Citation intent** — one or more of the seven canonical intents; each is described in Search Tips and on hover.
-- **Only rank papers that have been cited with the selected intent(s)** (on by default) keeps candidates that IDCite records as cited with a selected intent.
-- **Clear** empties the form. The query is kept in the URL, so a result page can be shared.
-
-Results list 15 seed papers. Each card shows bibliographic metadata, citation counts per intent, **Show citation contexts** (up to four citing papers that cited it with the selected intent, with their sentences), and **Open in Citation Network**. The form opens with a sample query taken from a real IDCite citing paper so it can be tried with one click; results are numbered in rank order only, and no result is marked as an expected answer.
-
-Ranking is citation-context-aware: a frozen SciBERT encoder, a query that fuses the title with the citation context, and cosine similarity against each seed paper’s bibliographic representation. The citation intent restricts the candidates and selects the evidence shown, rather than entering the query. See the [README](../README.md#citation-search) for a short description of the framework.
+- **Keywords** (citing title or citation context), **Citation intent**, and **Field** filter the 1,975 citation events of the evaluation set; the list is paginated, ten events per page.
+- **Rank candidates** uses the selected event's citing title, citation context, and intent as the query and ranks its fixed set of 100 same-field candidate papers.
+- The result shows the event (citing paper, context, intent, `citation_event_id`), the paper it cites with its rank under C1, C2, and C3, and the top 10 candidates for the condition chosen with the C1 / C2 / C3 tabs.
+- Each candidate card shows bibliographic metadata, score and ranks, citation counts per intent, **Show citation contexts** (other IDCite citations of that paper with the same intent; the query's own citing paper is excluded), and **Open in Citation Network**.
+- **Download CSV** returns all 100 candidates with `is_cited_target`, scores, and ranks.
+- Search Tips explain the three conditions, show the SHA-256 of the candidate matrix, and link to [`evaluation-dataset.md`](evaluation-dataset.md), which describes how to regenerate the set.
+- The query and selection are kept in the URL, so a result page can be shared.
 
 ---
 

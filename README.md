@@ -53,22 +53,16 @@ Keyword search over seed-paper titles and DOIs, with Field, Country, and Journal
 
 ![CitationHub citation search](assets/citationhub-citation-search.png)
 
-`/search/citation` sits in a tab next to Advanced search and is also linked under the paper search box on Home. Instead of matching words in titles, it recommends **which seed paper to cite at a specific point in a manuscript**.
+`/search/citation` sits in a tab next to Advanced search and is also linked under the paper search box on Home. It runs on **real IDCite citation events**: each one records a citing paper, the sentence in which it cites a seed paper (citation context), the citation intent, and the seed paper it cites.
 
-- **Field** (optional) limits the candidates to one of the 21 scientific fields.
-- **Paper title** is the title of the manuscript being written; a working title is fine.
-- **Citation context** is the sentence from the manuscript where a reference is needed, for example `… on the GOT-10k benchmark [?].`
-- **Citation intent** is the role the reference plays in that sentence: Background, Uses, Similarities, Motivation, Differences, Future Work, or Extends. Several can be selected; Search Tips explains each one.
-- By default only papers that IDCite records as cited with a selected intent are ranked.
+- **Keywords** search the citing-paper titles and citation contexts of the 1,975 citation events in the evaluation set; **Citation intent** and **Field** narrow the list.
+- Selecting an event uses its citing title, citation context, and intent as the query and ranks the event's fixed set of **100 same-field candidate papers** (the cited paper plus 99 others).
+- The page shows where the cited paper ranks under three conditions — **C1** title, **C2** title + context, **C3** title + intent-conditioned context — and the **top 10** candidates for the chosen condition, each with its citation counts per intent and the other IDCite citation contexts in which it was cited with that intent.
+- **Download CSV** returns all 100 candidates with their metadata, the `is_cited_target` flag, and their scores and ranks under C1, C2, and C3, so the ranking can be checked independently.
 
-The 15 best-matching seed papers are listed. Each shows its citation counts per intent and, on request, the citation contexts in which other papers cited it with that intent — evidence of *how* the paper has been used for that purpose. **Open in Citation Network** shows the same paper filtered to those intents. The form opens with a sample query (the title and one citing sentence of a real IDCite citing paper) so it can be tried with one click; results are numbered in rank order only.
+**Ranking framework.** Every text is encoded with a frozen SciBERT model; each seed paper is represented once by its bibliographic metadata (title, journal, creator, field, category). C1 uses the citing title; C2 combines the title with the citation context (context weight 0.75); C3 does the same with the context encoded together with a short description of its intent. Candidates are ranked by cosine similarity, computed live for the selected event.
 
-**Ranking framework.** Results are ordered by a **citation-context-aware ranking**, **not** by *citation counts* or *PageRank*:
-
-1. A frozen SciBERT encoder turns text into vectors. Each seed paper is represented once by its bibliographic metadata (title, journal, creator, field, category).
-2. The paper title and the citation context are encoded separately and combined into one query vector (context weight 0.75), so the ranking reflects both the topic of the manuscript and what is being said at the point of citation.
-3. Seed papers are ranked by cosine similarity to the query.
-4. The citation intent selects the candidates and the evidence rather than changing the query: only papers that IDCite records as cited with the selected intent are ranked, and the citation contexts shown for each result are those with that intent.
+**Evaluation set.** The citation events and candidate sets are generated from the public IDCite Parquet files with a fixed random seed, so anyone can regenerate them and compare hashes. The derivation, the code, and the expected hashes are in [`docs/evaluation-dataset.md`](docs/evaluation-dataset.md).
 
 ### Authors
 
