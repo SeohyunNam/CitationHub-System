@@ -183,8 +183,8 @@ Inner tabs:
 | Tab | Content |
 |---|---|
 | Overview | Intent distribution and summary statistics |
-| Citing Papers | Papers that cite this seed paper |
-| Co-cited | Other seed papers co-cited with this one |
+| Citing Papers | Papers that cite this seed paper; each title opens its DOI page, or its Semantic Scholar page when it has no DOI |
+| Co-cited | Other seed papers co-cited with this one; each title opens its DOI page, and **View in CitationHub** opens its paper detail |
 
 ---
 
