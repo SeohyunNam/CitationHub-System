@@ -183,8 +183,8 @@ Inner tabs:
 | Tab | Content |
 |---|---|
 | Overview | Intent distribution (an event with two intent labels counts under both, as on Citation search) and summary statistics |
-| Citing Papers | Papers that cite this seed paper. The tab shows the total number; up to 500 are listed (most citation contexts first) and **Export Citations CSV** has all of them. Each title opens its DOI page, or its Semantic Scholar page when it has no DOI |
-| Co-cited | Other seed papers co-cited with this one; each title opens its DOI page, and **View in CitationHub** opens its paper detail |
+| Citing Papers | Papers that cite this seed paper. The tab shows the total number and lists them 20 per page (most citation contexts first), with numbered pages to reach the rest; **Export Citations CSV** has all of them. Each title opens its DOI page, or its Semantic Scholar page when it has no DOI |
+| Co-cited | Other seed papers co-cited with this one, with the total number, 20 per page (most co-citations first); each title opens its DOI page, and **View in CitationHub** opens its paper detail |
 
 ---
 
