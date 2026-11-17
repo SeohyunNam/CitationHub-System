@@ -66,7 +66,7 @@ Home-page cards may show slightly different counts from the full release (for ex
 
 ## Construction in brief
 
-IDCite is built in [MDCite](https://github.com/SeohyunNam/MDCite) from Scopus bibliographic records, Web of Science / 2024 JCR journal grouping, OpenAlex citation links, Semantic Scholar citation contexts, and SynIntent citation-intent annotation. Journal-stratified sampling covers 21 ESI fields, 21 representative Web of Science categories, and 105 Q1 journals; the top 5% most-cited papers are kept independently within each journal (23,479 seed papers).
+IDCite is built in [MDCite](https://github.com/SeohyunNam/MDCite) from Scopus bibliographic records, Web of Science / 2024 JCR journal grouping, OpenAlex citation links, Semantic Scholar citation contexts, and citation-intent annotation by a SciBERT classifier fine-tuned on MultiCite ([Phan and Jung, 2026](https://doi.org/10.1007/s10791-026-09995-x)). Journal-stratified sampling covers 21 ESI fields, 21 representative Web of Science categories, and 105 Q1 journals; the top 5% most-cited papers are kept independently within each journal (23,479 seed papers).
 
 CitationHub starts **after** those 17 files exist: it indexes them for search, visualization, and SPARQL.
 
