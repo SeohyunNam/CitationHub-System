@@ -49,22 +49,6 @@ Keyword search over seed-paper titles and DOIs, with Field, Country, and Journal
 - Author strings in IDCite follow Scopus style (`Studenski S.`), not a full given name.
 - **Date published** is the seed paper’s cover year, not the year it was cited. Presets: Any date, Since 2020, 2015–2019, 2010–2014, Before 2010, or a custom YYYY–YYYY range.
 
-### Citation search
-
-![CitationHub citation search](assets/citationhub-citation-search.png)
-
-`/search/citation` sits in a tab next to Advanced search and is also linked under the paper search box on Home. It runs on **real IDCite citation events**: each one links a citing paper to a seed paper it cites and records every sentence in which it does so (citation context) and the citation intent.
-
-- **Keywords** search the citing-paper titles and citation contexts of the 1,975 citation events in the evaluation set; **Citation intent** and **Field** narrow the list. Keywords match the start of a word and are highlighted in yellow. The list keeps the evaluation-set order (not relevance) and shows ten events per page.
-- The page opens on an example search — *Stem cells*, **Similarities**, **Multidisciplinary** — with one of its events already ranked and a short note explaining it. **Back to example** returns to it from any search; **Clear** empties the form.
-- Selecting an event (**Rank candidates**) uses its citing title, citation context, and intent as the query and ranks the event's fixed set of **100 same-field candidate papers** (the cited paper plus 99 others). The selected event is marked **Ranked below** in the list; a new search clears the selection.
-- The page shows where the cited paper ranks under three conditions — **C1** title, **C2** title + context, **C3** title + intent-conditioned context — and the **top 10** candidates for the chosen condition, each with its citation counts per intent and the other IDCite citation contexts in which it was cited with that intent. **Show evidence** under the cited paper gives the IDCite `citation_event_id` that records the citation.
-- **Download CSV** returns all 100 candidates with their metadata, the `is_cited_target` flag, and their scores and ranks under C1, C2, and C3, so the ranking can be checked independently.
-
-**Ranking framework.** Every text is encoded with a frozen SciBERT model; each seed paper is represented once by its bibliographic metadata (title, journal, creator, field, category). C1 uses the citing title; C2 combines the title with the citation context (context weight 0.75); C3 does the same with the context encoded together with a short description of its intent. Candidates are ranked by cosine similarity, computed live for the selected event.
-
-**Evaluation set.** The citation events and candidate sets are generated from the public IDCite Parquet files with a fixed random seed, so anyone can regenerate them and compare hashes. The derivation, the code, and the expected hashes are in [`docs/evaluation-dataset.md`](docs/evaluation-dataset.md).
-
 ### Authors
 
 Author-name search grouped by author identifier. Each card shows affiliation, country, primary field, seed-paper count, and total citations. Opening a card leads to the **author detail** page: profile metadata, seed papers, citation-intent distribution, citations over time, and top citing venues.

@@ -45,27 +45,6 @@ Advanced search is a fielded form over the same seed-paper table as Search. It d
 
 ---
 
-## Citation search (`/search/citation`)
-
-![CitationHub citation search](../assets/citationhub-citation-search.png)
-
-Citation search runs on real IDCite citation events. It is reached from the tab next to Advanced search and from the **Citation search** link under the paper search box on Home.
-
-- **Keywords** (citing title or citation context), **Citation intent**, and **Field** filter the 1,975 citation events of the evaluation set; the list is paginated, ten events per page.
-- The list keeps the evaluation-set order, not relevance; a note under its heading says so. Filters only narrow the list.
-- Opened without a query, the page runs an example search (*Stem cells*, Similarities, Multidisciplinary) and ranks one of its events; a new search or another event replaces it.
-- Keywords match the start of a word (*stem* finds "stem" and "stems", not "system") and are highlighted in yellow; each context excerpt starts near its first match.
-- When the example event is shown, a short note above it explains that it is the example.
-- **Back to example** (next to **Clear**) returns to the example search from any search; **Clear** only empties the form. Every new search clears the selected event, so an earlier ranking is not left on screen.
-- **Rank candidates** uses the selected event's citing title, citation context, and intent as the query and ranks its fixed set of 100 same-field candidate papers. The selected event is highlighted in the list with a **Ranked below** label, and its button becomes **View its ranking**, which scrolls to the result.
-- The result shows the event (citing paper title, citing citation context, intent), the paper it cites with its rank under C1, C2, and C3 (**Show evidence** there reveals the IDCite `citation_event_id` recording the citation, the CSV link, and the generation guide), and the top 10 candidates for the condition chosen with the C1 / C2 / C3 tabs.
-- Each candidate card shows bibliographic metadata, score and ranks, citation counts per intent, **Show citation contexts** (other IDCite citations of that paper with the same intent; the query's own citing paper is excluded), and **Open in Citation Network**.
-- **Download CSV** returns all 100 candidates with `is_cited_target`, scores, and ranks.
-- Search Tips list the seven citation intents, describe the data and how it can be verified (with a link to [`evaluation-dataset.md`](evaluation-dataset.md), which explains how to regenerate the set), and explain the three ranking conditions.
-- The query and selection are kept in the URL, so a result page can be shared.
-
----
-
 ## Authors (`/authors`)
 
 Authors is a name search over seed-paper creators, grouped by `author_id`.
@@ -133,7 +112,7 @@ Citation Network shows **who cites a chosen seed paper, and with what intent**.
 - Force-directed graph: the seed paper is the center node; citing papers are colored by primary intent.
 - Node size reflects available citation-context evidence.
 - Click a node for title, year, and intent; open **View Detail** for the full paper page.
-- Click intents in the legend to filter. A filter counts every IDCite citation event carrying that intent, including events with two labels, so the numbers match the intent counts on Citation search.
+- Click intents in the legend to filter. A filter counts every IDCite citation event carrying that intent, including events with two labels.
 - Up to 500 citing papers are drawn (most citation contexts first); the legend says when more exist.
 - **Download citation events (CSV)** exports every citation event shown, with its IDCite `citation_event_id` and citation contexts.
 
@@ -182,7 +161,7 @@ Inner tabs:
 
 | Tab | Content |
 |---|---|
-| Overview | Intent distribution (an event with two intent labels counts under both, as on Citation search) and summary statistics |
+| Overview | Intent distribution (an event with two intent labels counts under both) and summary statistics |
 | Citing Papers | Papers that cite this seed paper. The tab shows the total number and lists them 20 per page (most citation contexts first), with numbered pages to reach the rest; **Export Citations CSV** has all of them. Each title opens its DOI page, or its Semantic Scholar page when it has no DOI |
 | Co-cited | Other seed papers co-cited with this one, with the total number, 20 per page (most co-citations first); each title opens its DOI page, and **View in CitationHub** opens its paper detail |
 
