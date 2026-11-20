@@ -96,3 +96,17 @@ Construction of the 17 files is documented in [MDCite](https://github.com/Seohyu
 - **One corpus, several views.** Search, maps, networks, and SPARQL are different projections of IDCite.
 - **Read-only SPARQL.** The public explorer can query the graph; it cannot modify it.
 - **Public documentation vs. operations.** This repository explains the design. It is not a deployment kit.
+
+## References
+
+These are the published descriptions of the main components named above. They are not CitationHub publications.
+
+1. Mark Raasveldt and Hannes Mühleisen. **DuckDB: An Embeddable Analytical Database.** In *Proceedings of the 2019 International Conference on Management of Data (SIGMOD)*, 2019, pp. 1981–1984. https://doi.org/10.1145/3299869.3320212
+
+2. Michael Bostock, Vadim Ogievetsky, and Jeffrey Heer. **D3: Data-Driven Documents.** *IEEE Transactions on Visualization and Computer Graphics* 17(12), 2011, pp. 2301–2309. https://doi.org/10.1109/TVCG.2011.185 (the force layout, map projection, and chart scales of the frontend libraries build on D3 modules)
+
+3. Richard Cyganiak, David Wood, and Markus Lanthaler (eds.). **RDF 1.1 Concepts and Abstract Syntax.** W3C Recommendation, 25 February 2014. https://www.w3.org/TR/rdf11-concepts/
+
+4. Steve Harris and Andy Seaborne (eds.). **SPARQL 1.1 Query Language.** W3C Recommendation, 21 March 2013. https://www.w3.org/TR/sparql11-query/
+
+5. Hannah Bast and Björn Buchhold. **QLever: A Query Engine for Efficient SPARQL+Text Search.** In *Proceedings of CIKM*, 2017, pp. 647–656. https://doi.org/10.1145/3132847.3132921

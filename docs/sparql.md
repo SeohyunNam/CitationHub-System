@@ -63,4 +63,8 @@ These papers are the recommended background for the SPARQL engine and related te
 
 6. Hannah Bast, Patrick Brosi, and Johannes Kalmbach. **Efficient Spatial Joins on Large Geometry Sets.** In *Proceedings of the 33rd ACM International Conference on Advances in Geographic Information Systems (SIGSPATIAL)*, 2025.
 
+7. Steve Harris and Andy Seaborne (eds.). **SPARQL 1.1 Query Language.** W3C Recommendation, 21 March 2013. https://www.w3.org/TR/sparql11-query/
+
+8. Richard Cyganiak, David Wood, and Markus Lanthaler (eds.). **RDF 1.1 Concepts and Abstract Syntax.** W3C Recommendation, 25 February 2014. https://www.w3.org/TR/rdf11-concepts/
+
 QLever software: [https://github.com/ad-freiburg/qlever](https://github.com/ad-freiburg/qlever)

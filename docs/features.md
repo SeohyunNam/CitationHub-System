@@ -170,3 +170,71 @@ Inner tabs:
 ## How the views share data
 
 All of these pages read IDCite. Search and paper detail use normalized seed papers and citation events. Authors use the author lookup plus seed-paper metadata. Analytics aggregates citation events. Geographic Map counts the city, country, and affiliation names recorded on seed papers and places them with the bundled coordinate lookup. Citation Network uses citing-paper lists for one seed paper. Knowledge Graph and SPARQL use the node/edge tables and the RDF conversion of those tables.
+
+---
+
+## References
+
+These papers are recommended background for the ideas behind each view. They are not CitationHub publications.
+
+### Search and Advanced search
+
+Matching seed papers are ordered by their citation count, a query-independent importance score of the kind long used in web and scholarly search.
+
+1. Sergey Brin and Lawrence Page. **The Anatomy of a Large-Scale Hypertextual Web Search Engine.** *Computer Networks and ISDN Systems* 30(1–7), 1998, pp. 107–117. https://doi.org/10.1016/S0169-7552(98)00110-X
+
+2. Jöran Beel and Bela Gipp. **Google Scholar's Ranking Algorithm: An Introductory Overview.** In *Proceedings of the 12th International Conference on Scientometrics and Informetrics (ISSI)*, 2009, pp. 230–241. https://www.issi-society.org/proceedings/issi_2009/ISSI2009-proc-vol1_Aug2009_batch2-paper-1.pdf
+
+### Citation intents (Authors, Analytics, Citation Network, Paper detail)
+
+The seven intents describe the function for which a paper is cited. The papers below introduced citation-function classification and its use in studying scientific fields, and show systems that display citation contexts and intents.
+
+3. Simone Teufel, Advaith Siddharthan, and Dan Tidhar. **Automatic Classification of Citation Function.** In *Proceedings of EMNLP*, 2006, pp. 103–110. https://aclanthology.org/W06-1613
+
+4. David Jurgens, Srijan Kumar, Raine Hoover, Dan McFarland, and Dan Jurafsky. **Measuring the Evolution of a Scientific Field through Citation Frames.** *Transactions of the Association for Computational Linguistics* 6, 2018, pp. 391–406. https://doi.org/10.1162/tacl_a_00028
+
+5. Arman Cohan, Waleed Ammar, Madeleine van Zuylen, and Field Cady. **Structural Scaffolds for Citation Intent Classification in Scientific Publications.** In *Proceedings of NAACL-HLT*, 2019, pp. 3586–3596. https://doi.org/10.18653/v1/N19-1361
+
+6. Anne Lauscher, Brandon Ko, Bailey Kuehl, Sophie Johnson, Arman Cohan, David Jurgens, and Kyle Lo. **MultiCite: Modeling Realistic Citations Requires Moving Beyond the Single-Sentence Single-Label Setting.** In *Proceedings of NAACL-HLT*, 2022, pp. 1875–1889. https://doi.org/10.18653/v1/2022.naacl-main.137
+
+7. Josh M. Nicholson, Milo Mordaunt, Patrice Lopez, Ashish Uppala, Domenic Rosati, Neves P. Rodrigues, Peter Grabitz, and Sean C. Rife. **scite: A Smart Citation Index that Displays the Context of Citations and Classifies Their Intent Using Deep Learning.** *Quantitative Science Studies* 2(3), 2021, pp. 882–898. https://doi.org/10.1162/qss_a_00146
+
+### Analytics
+
+Background for the influential-citation share and for reading citation activity over time.
+
+8. Marco Valenzuela, Vu Ha, and Oren Etzioni. **Identifying Meaningful Citations.** In *AAAI Workshop on Scholarly Big Data* (Technical Report WS-15-13), 2015, pp. 21–26. https://cdn.aaai.org/ocs/ws/ws0121/10185-46008-1-PB.pdf
+
+9. Chaomei Chen. **CiteSpace II: Detecting and Visualizing Emerging Trends and Transient Patterns in Scientific Literature.** *Journal of the American Society for Information Science and Technology* 57(3), 2006, pp. 359–377. https://doi.org/10.1002/asi.20317
+
+### Citation Network and Paper detail
+
+Citation indexing, co-citation (the **Co-cited** tab of paper detail), and earlier tools for exploring citation networks.
+
+10. Eugene Garfield. **Citation Indexes for Science: A New Dimension in Documentation through Association of Ideas.** *Science* 122(3159), 1955, pp. 108–111. https://doi.org/10.1126/science.122.3159.108
+
+11. Henry Small. **Co-Citation in the Scientific Literature: A New Measure of the Relationship Between Two Documents.** *Journal of the American Society for Information Science* 24(4), 1973, pp. 265–269. https://doi.org/10.1002/asi.4630240406
+
+12. Nees Jan van Eck and Ludo Waltman. **CitNetExplorer: A New Software Tool for Analyzing and Visualizing Citation Networks.** *Journal of Informetrics* 8(4), 2014, pp. 802–823. https://doi.org/10.1016/j.joi.2014.07.006
+
+13. Niklas Elmqvist and Philippas Tsigas. **CiteWiz: A Tool for the Visualization of Scientific Citation Networks.** *Information Visualization* 6, 2007, pp. 215–232. https://doi.org/10.1057/palgrave.ivs.9500156
+
+14. Jason Portenoy, Jessica Hullman, and Jevin D. West. **Leveraging Citation Networks to Visualize Scholarly Influence Over Time.** *Frontiers in Research Metrics and Analytics* 2, 2017, Article 8. https://doi.org/10.3389/frma.2017.00008
+
+### Knowledge Graph
+
+Knowledge graphs in general, knowledge graphs for scholarly communication, and ontologies for bibliographic resources and citations.
+
+15. Aidan Hogan et al. **Knowledge Graphs.** *ACM Computing Surveys* 54(4), 2021, Article 71. https://doi.org/10.1145/3447772
+
+16. Sören Auer, Viktor Kovtun, Manuel Prinz, Anna Kasprzik, Markus Stocker, and Maria-Esther Vidal. **Towards a Knowledge Graph for Science.** In *Proceedings of the 8th International Conference on Web Intelligence, Mining and Semantics (WIMS)*, 2018, pp. 1:1–1:6. https://doi.org/10.1145/3227609.3227689
+
+17. Mohamad Yaser Jaradeh, Allard Oelen, Kheir Eddine Farfar, Manuel Prinz, Jennifer D'Souza, Gábor Kismihók, Markus Stocker, and Sören Auer. **Open Research Knowledge Graph: Next Generation Infrastructure for Semantic Scholarly Knowledge.** In *Proceedings of the 10th International Conference on Knowledge Capture (K-CAP)*, 2019, pp. 243–246. https://doi.org/10.1145/3360901.3364435
+
+18. Waleed Ammar et al. **Construction of the Literature Graph in Semantic Scholar.** In *Proceedings of NAACL-HLT (Industry Papers)*, 2018, pp. 84–91. https://doi.org/10.18653/v1/N18-3011
+
+19. Silvio Peroni and David Shotton. **FaBiO and CiTO: Ontologies for Describing Bibliographic Resources and Citations.** *Journal of Web Semantics* 17, 2012, pp. 33–43. https://doi.org/10.1016/j.websem.2012.08.001
+
+### SPARQL
+
+The SPARQL engine and the W3C standards behind it are listed in [`sparql.md`](sparql.md#references).
